@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>FunnyJJ书店</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div class=" navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#!/" class="navbar-brand">欢迎来到我的世界</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="#!/">首页</a></li>
+                <li><a href="#!/list">列表页</a></li>
+                <li><a href="#!/add">添加页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="padding-bottom: 40px">
+            <div ng-view></div>
+        </div>
+    </div>
+</div>
+<div class="text-center" style="position: fixed;bottom:0;left:0;width:100%;line-height: 40px;background: #333;color: #fff">
+    &copy:版权归倾城所有
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="js/controller.js"></script>
+<script>
+    var app=angular.module('appModule',['ngResource','ngRoute','controller']);
+    app.config(function ($routeProvider) {
+        $routeProvider.when('/',{
+            templateUrl:'tmpl/home.html',
+            controller:'homeCtrl'
+        }).when('/add',{
+            templateUrl:'tmpl/add.html',
+            controller:'addCtrl'
+        }).when('/list',{
+            templateUrl:'tmpl/list.html',
+            controller:'listCtrl'
+        }).when('/detail/:id',{
+            templateUrl:'tmpl/detail.html',
+            controller:'detailCtrl'
+        }).otherwise('/')
+    });
+
+    app.factory('Books',function ($resource) {
+        return $resource('/book/:id',null,{
+            update:{method:'PUT'}
+        })
+    })
+</script>
+</body>
+</html>

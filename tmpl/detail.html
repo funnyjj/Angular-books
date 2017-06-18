@@ -1,0 +1,29 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <span ng-show="flag">{{book.bookName}}</span>
+            <input type="text" ng-model="temp.bookName" ng-hide="flag">
+            <a href="#!/list" class="btn btn-default pull-right btn-xs">返回</a>
+        </div>
+
+        <div class="panel-body text-center">
+            <img ng-src="{{book.bookCover}}" alt="">
+        </div>
+        <div class="panel-footer">
+            <span ng-show="flag">{{book.bookPrice}}</span>
+            <input type="text" ng-model="temp.bookPrice" ng-hide="flag">
+            <button class="btn btn-warning" ng-show="flag" ng-click="changeFlag()">修改</button>
+            <button class="btn btn-danger" ng-click="remove()" ng-show="flag">删除</button>
+
+            <button class="btn btn-success" ng-hide="flag" ng-click="update()">确认</button>
+            <button class="btn btn-default" ng-hide="flag" ng-click="cancel()">取消</button>
+        </div>
+
+    </div>
+</div>
+<style>
+    img{
+        width: 250px;
+        height: 300px;
+    }
+</style>

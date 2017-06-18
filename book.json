@@ -1,0 +1,10 @@
+[{"bookName":"小王子","bookPrice":"52","bookCover":"../img/1.jpg","bookId":1},
+  {"bookName":"几米","bookPrice":"55","bookCover":"../img/2.jpg","bookId":2},
+  {"bookName":"笛安","bookPrice":"53","bookCover":"../img/33.jpg","bookId":3},{"bookName":"小王子","bookPrice":"52","bookCover":"../img/1.jpg","bookId":4},
+  {"bookName":"几米","bookPrice":"55","bookCover":"../img/2.jpg","bookId":5},
+  {"bookName":"笛安","bookPrice":"53","bookCover":"../img/33.jpg","bookId":6},
+  {"bookName":"小王子","bookPrice":"52","bookCover":"../img/1.jpg","bookId":7},
+  {"bookName":"几米","bookPrice":"55","bookCover":"../img/2.jpg","bookId":8},
+  {"bookName":"笛安","bookPrice":"53","bookCover":"../img/33.jpg","bookId":9}
+
+]
